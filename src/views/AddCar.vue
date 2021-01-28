@@ -3,16 +3,19 @@
   <form @submit.prevent="onSubmit">
     <div class="mb-3">
       <label for="brand" class="form-label">Brand</label>
-      <input required minlength="2" v-model="formData.brand" type="text" class="form-control" id="brand" aria-describedby="brand"/>
+      <input required minlength="2" v-model="formData.brand"
+        type="text" class="form-control" id="brand" aria-describedby="brand"/>
     </div>
 
     <div class="mb-3">
       <label for="model" class="form-label">Model</label>
-      <input required minlength="2" v-model="formData.model" type="text" class="form-control" id="model" aria-describedby="model"/>
+      <input required minlength="2" v-model="formData.model" type="text" class="form-control"
+        id="model" aria-describedby="model"/>
     </div>
    <div class="mb-3">
       <label for="Engine" class="form-label">Engine</label>
-      <input required v-model="formData.engine" type="text" class="form-control" id="engine" aria-describedby="engine"/>
+      <input required v-model="formData.engine" type="text" class="form-control"
+        id="engine" aria-describedby="engine"/>
     </div>
 
     <div class="mb-3">
@@ -30,11 +33,13 @@
     </div>
     <div class="mb-3 form-check">
       <label class="form-label" for="isAutomatic">Is Automatic</label>
-       <input  type="checkbox" v-model="formData.isAutomatic" class="form-checkbox" name="isAutomatic" value="true">
+       <input  type="checkbox" v-model="formData.isAutomatic" class="form-checkbox"
+         name="isAutomatic" value="true">
     </div>
     <div class="mb-3 form-check">
       <label class="form-label" for="numberOfDoors">Number Of Doors</label>
-      <input required min=0 v-model="formData.numberOfDoors" type="number" class="form-number-input" id="numberOfDoors">
+      <input required min=0 v-model="formData.numberOfDoors" type="number" class="form-number-input"
+        id="numberOfDoors">
     </div>
 
     <button type="submit" class="btn btn-primary m-4">Submit</button>

@@ -18,6 +18,14 @@ class CarService {
       console.log(error);
     }
   }
+
+  async delete(carId) {
+    const response = await http.delete(`cars/${carId}`);
+    return response.data;
+  }
+  catch(error) {
+    console.log(error);
+  }
 }
 const carService = new CarService();
 export default carService;

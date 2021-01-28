@@ -11,7 +11,8 @@
             <th scope="col">Automatic</th>
             <th scope="col">Engine</th>
             <th scope="col">Doors</th>
-            <th scope="col"></th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +25,12 @@
 							<td>{{car.isAutomatic}}</td>
 							<td>{{car.engine}}</td>
 						<td>{{car.numberOfDoors}}</td>
+                        <td>
                         <button class="btn btn-primary">edit</button>
+                        </td>
+                        <td>
+                        <button @click.prevent="deleteCar(car)" class="btn btn-danger">X</button>
+                        </td>
             </tr>
         </tbody>
         </table>
@@ -42,6 +48,13 @@ export default {
   },
   async created() {
      this.cars = await CarService.getAll()
+  },
+
+  methods: {
+    async deleteCar(car){
+      await CarService.delete(car.id)
+      this.cars = this.cars.filter(c => c.id != car.id)
+    }
   }
 
 }
